@@ -50,7 +50,7 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
     for (int i = 0; i<len1; i++) {
         for (j = 0; j<len2; j++) {
         if (array1[i] == array2[j]) {
-            break
+            break;
         }
     }
      if (j==len2){
@@ -84,5 +84,6 @@ public static boolean isSorted(int[] array) {
 }
 return ans;
 
+}
 }
     
