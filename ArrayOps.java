@@ -65,7 +65,7 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
             return false;}
     }
     for (int i = 0; i < len2; i++) {
-        found = false;
+        a = false;
         for (int j = 0; j < len1; j++) {
             if (array2[i] == array1[j]) {
                 a = true;
