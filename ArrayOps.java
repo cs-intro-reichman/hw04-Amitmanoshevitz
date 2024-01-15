@@ -78,21 +78,20 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
 }
 
 
-  public static boolean isSorted(int[] array) {
-    int i = 0;
+ public static boolean isSorted(int[] array) {
     int len = array.length;
 
-    while (i < len - 1) {
+    boolean sorted = true;
+
+    for (int i = 0; i < len - 1 && sorted; i++) {
         if (array[i] < array[i + 1]) {
-            i++;
+            sorted = false;
         } else if (array[i] > array[i + 1]) {
-            return false;
-        } else {
-            i++;
+            sorted = false;
         }
     }
 
-    return true;
+    return sorted;
 }
 
 }
