@@ -14,8 +14,7 @@ public class ArrayOps {
         return i;
     }
 
-
-    public static int secondMaxValue(int[] array) {
+public static int secondMaxValue(int[] array) {
     int len = array.length;
     int i = 2;
     int bigger;
@@ -32,25 +31,22 @@ public class ArrayOps {
 
     while (i < len) {
         new1 = array[i];
-        if (new1 > big && new1 > bigger) {
+        if (new1 > big && new1 >= bigger) {
             big = bigger;
             bigger = new1;
-        }
-        if (new1 < bigger) {
+        } else if (new1 > big && new1 < bigger) {
             big = new1;
         }
         i++;
     }
     return big;
 }
-
 public static boolean containsTheSameElements(int[] array1, int[] array2) {
     int len1 = array1.length;
     int len2 = array2.length;
 
     if (len1 != len2) {
-        return false; 
-    }
+        return false;}
 
     boolean a;
     for (int i = 0; i < len1; i++) {
@@ -61,24 +57,28 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
                 a = true;
                 break;}
         }
-        if (!a) {
+
+        if (a == false) {
             return false;}
     }
     for (int i = 0; i < len2; i++) {
         a = false;
+
         for (int j = 0; j < len1; j++) {
-            if (array2[i] == array1[j]) {
+            if ((a == false) && (array2[i] == array1[j])) {
                 a = true;
-                break;}
+                break; }
         }
-        if (!a) {
-            return false;  
-        }
+
+        if (a == false) {
+            return false;}
     }
-    return true; 
+
+    return true;
 }
 
-    public static boolean isSorted(int[] array) {
+
+  public static boolean isSorted(int[] array) {
     int i = 0;
     int len = array.length;
 
@@ -87,8 +87,9 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
             i++;
         } else if (array[i] > array[i + 1]) {
             return false;
-        } else { 
-            i++; }
+        } else {
+            i++;
+        }
     }
 
     return true;
