@@ -22,7 +22,8 @@ public class StringOps {
     //////                                               ///////
     ////////////////////////////////////////////////////////////
     public static void main(String[] args) {
-    }
+        }   
+    
 
  public static String capVowelsLowRest(String string) {
     int len = string.length();
@@ -43,10 +44,11 @@ public class StringOps {
             newword = newword + 'U';
         } else {
             int num = (int) cur;
-            if (num >= 97 && num <= 122) {
-                num = num - 32;  
+            if (num >= 65 && num <= 90) {
+                num = num + 32;
+                cur = (char) num;
             }
-            newword = newword + (char) num;
+            newword = newword + cur;
         }
     }
 
