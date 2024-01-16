@@ -89,10 +89,10 @@ public class StringOps {
 
     public static int[] allIndexOf (String string, char chr) {
         int count = 0;
-        int len = string.length;
+        int len = string.length();
 
         for (int i = 0; i < len ; i++) {
-            Char char1 = string.charAt(i);
+            char char1 = string.charAt(i);
             if (char1 == chr) {
                 count++;
             }
@@ -102,7 +102,7 @@ public class StringOps {
         int index = 0;
 
         for (int i = 0; i < len ; i++) {
-            Char char1 = string.charAt(i);
+            char char1 = string.charAt(i);
             if (char1 == chr) {
                 array1[index] = i;
                 index++;
