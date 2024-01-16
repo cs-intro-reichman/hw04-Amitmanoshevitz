@@ -24,7 +24,7 @@ public class StringOps {
     public static void main(String[] args) {
     }
 
-  public static String capVowelsLowRest(String string) {
+ public static String capVowelsLowRest(String string) {
     int len = string.length();
     String newword = "";
 
@@ -42,10 +42,9 @@ public class StringOps {
         } else if (cur == 'u') {
             newword = newword + 'U';
         } else {
-            // Convert other characters to lowercase
             int num = (int) cur;
-            if (num >= 65 && num <= 90) {
-                num = num + 32;
+            if (num >= 97 && num <= 122) {
+                num = num - 32;  
             }
             newword = newword + (char) num;
         }
@@ -53,6 +52,7 @@ public class StringOps {
 
     return newword;
 }
+
 
  
 public static String camelCase(String string) {
