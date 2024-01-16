@@ -55,10 +55,10 @@ public class StringOps {
 }
 
  
- public static String camelCase(String string) {
+public static String camelCase(String string) {
     String newword = "";
 
-/// Changing the first letter to small letter
+//// Changing the first letter to small letter
     char first = string.charAt(0);
     int num = (int) first;
     if (num >= 65 && num <= 90) {
@@ -66,36 +66,37 @@ public class StringOps {
         char e = (char) num;
         newword = newword + e;
     } else {
-        newword = newword + first;
-    }
+        newword = newword + first;}
 
-/// Changing the first letter of each word after the first word to capital letter,
+//// Changing the first letter of each word after the first word to capital letter,
 /// erasing all spaces, and converting other letters to small letters
     boolean cap = false;
 
     for (int i = 1; i < string.length(); i++) {
         char currentchar = string.charAt(i);
         int num1 = (int) currentchar;
-
-        if (num1 != 32) {
+        if (num1 == 32) {
+            cap = true;
+        } else {
             if (cap) {
-/// Changing the first letter after a space to capital
                 if (num1 >= 97 && num1 <= 122) {
-                    num1 = num1 - 32;}
+                    num1 = num1 - 32;
+                }
                 char con = (char) num1;
                 newword = newword + con;
                 cap = false;
             } else {
+/// other letter to small letters
                 if (num1 >= 65 && num1 <= 90) {
-                    num1 = num1 + 32;
-                }
+                    num1 = num1 + 32;}
                 newword = newword + (char) num1;
-                }
+            }
         }
-}
+    }
 
     return newword;
 }
+
 
     
 
