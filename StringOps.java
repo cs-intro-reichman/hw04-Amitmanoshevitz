@@ -24,7 +24,7 @@ public class StringOps {
     public static void main(String[] args) {
     }
 
-    public static String capVowelsLowRest(String string) {
+  public static String capVowelsLowRest(String string) {
     int len = string.length();
     String newword = "";
 
@@ -32,59 +32,71 @@ public class StringOps {
         char cur = string.charAt(i);
 
         if (cur == 'a') {
-            newword = newword + 'A';}
-        else if (cur == 'e') {
-            newword = newword + 'E';}
-        else if (cur == 'i') {
-            newword = newword + 'I';}
-        else if (cur == 'o') {
-            newword = newword + 'O';}
-        else if (cur == 'u') {
-            newword = newword + 'U';}
-        else {newword = newword + cur;}
+            newword = newword + 'A';
+        } else if (cur == 'e') {
+            newword = newword + 'E';
+        } else if (cur == 'i') {
+            newword = newword + 'I';
+        } else if (cur == 'o') {
+            newword = newword + 'O';
+        } else if (cur == 'u') {
+            newword = newword + 'U';
+        } else {
+            // Convert other characters to lowercase
+            int num = (int) cur;
+            if (num >= 65 && num <= 90) {
+                num = num + 32;
+            }
+            newword = newword + (char) num;
+        }
     }
 
     return newword;
 }
+
  
  public static String camelCase(String string) {
-        String newword = "";
+    String newword = "";
 
-// Changing the first letter
-        char first = string.charAt(0);
-        int num = (int) first;
-        if (num >= 65 && num <= 90) {
-            num = num + 32;
-            char e = (char) num;
-            newword = newword + e;
-        } else {
-            newword = newword + first;
-        }
+/// Changing the first letter to small letter
+    char first = string.charAt(0);
+    int num = (int) first;
+    if (num >= 65 && num <= 90) {
+        num = num + 32;
+        char e = (char) num;
+        newword = newword + e;
+    } else {
+        newword = newword + first;
+    }
 
-// now I'm changing the first letter after a space to capital
-        boolean cap = false;
+/// Changing the first letter of each word after the first word to capital letter,
+/// erasing all spaces, and converting other letters to small letters
+    boolean cap = false;
 
-        for (int i = 1; i < string.length(); i++) {
-            char char1 = string.charAt(i);
-            int num1 = (int) char1;
+    for (int i = 1; i < string.length(); i++) {
+        char currentchar = string.charAt(i);
+        int num1 = (int) currentchar;
 
-            if (num1 == 32) {
-                cap = true;
-            } else if (cap) {
-//changing the first letter after a space
-                if (num1 >= 97 && num <= 122) {
-                    num1 = num1 - 32;
-                }
+        if (num1 != 32) {
+            if (cap) {
+/// Changing the first letter after a space to capital
+                if (num1 >= 97 && num1 <= 122) {
+                    num1 = num1 - 32;}
                 char con = (char) num1;
                 newword = newword + con;
                 cap = false;
             } else {
-                newword = newword + char1;
-            }
+                if (num1 >= 65 && num1 <= 90) {
+                    num1 = num1 + 32;
+                }
+                newword = newword + (char) num1;
+                }
         }
+}
 
-        return newword;
-    }
+    return newword;
+}
+
     
 
     public static int[] allIndexOf (String string, char chr) {
