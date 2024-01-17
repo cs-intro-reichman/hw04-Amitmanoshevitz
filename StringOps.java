@@ -25,36 +25,35 @@ public class StringOps {
         }   
     
 
- public static String capVowelsLowRest(String string) {
-    int len = string.length();
-    String newword = "";
-
-    for (int i = 0; i < len; i++) {
-        char cur = string.charAt(i);
-
-        if (cur == 'a') {
-            newword = newword + 'A';
-        } else if (cur == 'e') {
-            newword = newword + 'E';
-        } else if (cur == 'i') {
-            newword = newword + 'I';
-        } else if (cur == 'o') {
-            newword = newword + 'O';
-        } else if (cur == 'u') {
-            newword = newword + 'U';
-        } else {
-            int num = (int) cur;
-            if (num >= 65 && num <= 90) {
-                num = num + 32;
-                cur = (char) num;
+        public static String capVowelsLowRest(String string) {
+            int len = string.length();
+            String newword = "";
+        
+            for (int i = 0; i < len; i++) {
+                char cur = string.charAt(i);
+        
+                if (cur == 'a') {
+                    newword = newword + 'A';
+                } else if (cur == 'e') {
+                    newword = newword + 'E';
+                } else if (cur == 'i') {
+                    newword = newword + 'I';
+                } else if (cur == 'o') {
+                    newword = newword + 'O';
+                } else if (cur == 'u') {
+                    newword = newword + 'U';
+                } else {
+                    int num = (int) cur;
+                    if (num >= 65 && num <= 90) {
+                        num = num + 32;
+                        cur = (char) num;
+                    }
+                    newword = newword + cur;
+                }
             }
-            newword = newword + cur;
+        
+            return newword;
         }
-    }
-
-    return newword;
-}
-
 
  
 public static String camelCase(String string) {
