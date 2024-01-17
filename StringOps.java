@@ -41,15 +41,16 @@ public class StringOps {
                     newword = newword + 'O';
                 } else if (cur == 'u') {
                     newword = newword + 'U';
-                } else {
+                } 
+                else {
                     int num = (int) cur;
-                    if (num >= 65 && num <= 90) {
+                    if ((num >= 65 && num <= 90)&&(num != 65) && (num != 69)&&(num != 73) && (num != 79)&& (num != 85)){
                         num = num + 32;
                         cur = (char) num;
                     }
                     newword = newword + cur;
                 }
-            }
+            }     
         
             return newword;
         }
