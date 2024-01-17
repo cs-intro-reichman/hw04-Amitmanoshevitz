@@ -31,7 +31,6 @@ public class StringOps {
         
             for (int i = 0; i < len; i++) {
                 char cur = string.charAt(i);
-        
                 if (cur == 'a') {
                     newword = newword + 'A';
                 } else if (cur == 'e') {
@@ -54,6 +53,7 @@ public class StringOps {
         
             return newword;
         }
+
 
  
 public static String camelCase(String string) {
