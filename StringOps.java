@@ -44,6 +44,7 @@ public class StringOps {
                 } 
                 else {
                     int num = (int) cur;
+                    // #feedback - it is better in thsi case to use the actual letters and not their number representation.
                     if ((num >= 65 && num <= 90)&&(num != 65) && (num != 69)&&(num != 73) && (num != 79)&& (num != 85)){
                         num = num + 32;
                         cur = (char) num;
@@ -63,6 +64,7 @@ public static String camelCase(String string) {
 //// Changing the first letter to small letter
     char first = string.charAt(0);
     int num = (int) first;
+    // #feedback - the first letter can be a space.
     if (num >= 65 && num <= 90) {
         num = num + 32;
         char e = (char) num;
