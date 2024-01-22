@@ -6,8 +6,10 @@ public class ArrayOps {
     public static int findMissingInt (int[] array) {
         int len = array.length;
         int i = 0;
+        // #feedback - j is not used.
         int j = 0;
 
+        // #feedback - this code assumes that the array is sorted, which is not the case.
         while (i < len && array[i] == i) {
             i++;
         }
@@ -47,6 +49,7 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
     int len1 = array1.length;
     int len2 = array2.length;
 
+    // #feedback - you should also check the other direction - that elements in array2 are in array1.
     for (int i = 0; i<len1; i++) {
         for (j = 0; j<len2; j++) {
         if (array1[i] == array2[j]) {
@@ -54,6 +57,7 @@ public static boolean containsTheSameElements(int[] array1, int[] array2) {
         }
     }
      if (j==len2){
+         // #feedback - you can return false directly instead of continuing the loop.
         ans = false;
      }
  }
